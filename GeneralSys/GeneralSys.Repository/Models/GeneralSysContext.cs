@@ -1,7 +1,8 @@
 using System.Data.Entity;
-using GeneralSys.Infrastructure.Models.Mapping;
+using GeneralSys.Domain;
+using GeneralSys.Repository.Models.Mapping;
 
-namespace GeneralSys.Infrastructure.Models
+namespace GeneralSys.Repository.Models
 {
     public class GeneralSysContext : DbContext
     {

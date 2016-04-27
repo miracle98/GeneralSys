@@ -1,6 +1,7 @@
 using System.Data.Entity.ModelConfiguration;
+using GeneralSys.Domain;
 
-namespace GeneralSys.Infrastructure.Models.Mapping
+namespace GeneralSys.Repository.Models.Mapping
 {
     public class UserMap : EntityTypeConfiguration<User>
     {
