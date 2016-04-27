@@ -10,13 +10,13 @@ using GeneralSys.Repository.Models;
 
 namespace GeneralSys.Repository
 {
-    public class BaseRepository<T>: IRepository<T> where T:class 
+    public class BaseRepository<T> : IRepository<T> where T : class
     {
         protected GeneralSysContext DbContext = new GeneralSysContext();
 
 
         /// <summary>
-        /// 根据过滤条件，获取记录
+        ///     根据过滤条件，获取记录
         /// </summary>
         /// <param name="exp">The exp.</param>
         public IQueryable<T> Find(Expression<Func<T, bool>> exp = null)
@@ -30,7 +30,7 @@ namespace GeneralSys.Repository
         }
 
         /// <summary>
-        /// 查找单个
+        ///     查找单个
         /// </summary>
         public T FindSingle(Expression<Func<T, bool>> exp)
         {
@@ -38,7 +38,7 @@ namespace GeneralSys.Repository
         }
 
         /// <summary>
-        /// 得到分页记录
+        ///     得到分页记录
         /// </summary>
         /// <param name="pageindex">The pageindex.</param>
         /// <param name="pagesize">The pagesize.</param>
@@ -50,11 +50,11 @@ namespace GeneralSys.Repository
             if (string.IsNullOrEmpty(orderby))
                 orderby = "Id descending";
 
-            return Filter(exp).OrderBy(orderby).Skip(pagesize * (pageindex - 1)).Take(pagesize);
+            return Filter(exp).OrderBy(orderby).Skip(pagesize*(pageindex - 1)).Take(pagesize);
         }
 
         /// <summary>
-        /// 根据过滤条件获取记录数
+        ///     根据过滤条件获取记录数
         /// </summary>
         public int GetCount(Expression<Func<T, bool>> exp = null)
         {
@@ -68,7 +68,7 @@ namespace GeneralSys.Repository
         }
 
         /// <summary>
-        /// 批量添加
+        ///     批量添加
         /// </summary>
         /// <param name="entities">The entities.</param>
         public void BatchAdd(T[] entities)
@@ -93,7 +93,7 @@ namespace GeneralSys.Repository
         }
 
         /// <summary>
-        /// 按指定id更新实体,会更新整个实体
+        ///     按指定id更新实体,会更新整个实体
         /// </summary>
         /// <param name="identityExp">The identity exp.</param>
         /// <param name="entity">The entity.</param>
@@ -104,8 +104,8 @@ namespace GeneralSys.Repository
         }
 
         /// <summary>
-        /// 实现按需要只更新部分更新
-        /// <para>如：Update(u =>u.Id==1,u =>new User{Name="ok"});</para>
+        ///     实现按需要只更新部分更新
+        ///     <para>如：Update(u =>u.Id==1,u =>new User{Name="ok"});</para>
         /// </summary>
         /// <param name="where">The where.</param>
         /// <param name="entity">The entity.</param>

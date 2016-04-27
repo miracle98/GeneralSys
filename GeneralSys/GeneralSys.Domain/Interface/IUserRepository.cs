@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 
 #region Version Info
+
 /* ========================================================================
 * 【本接口功能概述】
 * 
@@ -17,13 +13,15 @@ using System.Threading.Tasks;
 * 修改说明：
 * ========================================================================
 */
+
 #endregion
+
 namespace GeneralSys.Domain.Interface
 {
     /// <summary>
-    /// 用户仓储接口
+    ///     用户仓储接口
     /// </summary>
-    public interface IUserRepository:IRepository<User>
+    public interface IUserRepository : IRepository<User>
     {
     }
 }
