@@ -116,8 +116,6 @@
     <Content Include="Content\BJUI\other\html5shiv.min.js" />
     <Content Include="Content\BJUI\other\jquery.iframe-transport.js" />
     <Content Include="Content\BJUI\other\respond.min.js" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\plugins\bootstrap.js" />
     <Content Include="Content\plugins\bootstrap.min.js" />
     <Content Include="Content\plugins\bootstrapSelect\bootstrap-select.css" />
@@ -481,16 +479,11 @@
     <Content Include="Content\BJUI\themes\purple\purple.png" />
     <Content Include="Content\BJUI\themes\purple\topbg.png" />
     <Content Include="Content\BJUI\themes\purple\zTreeStandard.png" />
-    <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\222.pubxml" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Common\grid.js" />
+    <Content Include="Scripts\UIJs\SysResource.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -529,7 +522,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\SysResource\Index.cshtml" />
     <None Include="Web.Debug.config">

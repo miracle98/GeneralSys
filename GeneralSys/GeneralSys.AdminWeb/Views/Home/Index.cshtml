@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Index";
 }
-@model IEnumerable<GeneralSys.App.ViewModel.SysResourceVm>
+@*@model IEnumerable<GeneralSys.App.ViewModel.SysResourceVm>*@
     <!-- init -->
 <script type="text/javascript">
         $(function () {
@@ -57,9 +57,6 @@
 
         //菜单-事件
         function MainMenuClick(event, treeId, treeNode) {
-            console.log(event);
-            console.log(treeId);
-            console.log(treeNode);
             event.preventDefault();
             if (treeNode.isParent) {
                 var zTree = $.fn.zTree.getZTreeObj(treeId);
@@ -127,10 +124,10 @@
                             <div class="items hide" data-noinit="true">
                                 <ul id="bjui-hnav-tree2" class="ztree ztree_main" data-toggle="ztree" data-on-click="MainMenuClick" data-expand-all="true" data-faicon="table">
                                     <li data-id="2" data-pid="0" data-faicon="folder-open-o" data-faicon-close="folder-o">表格</li>
-                                    <li data-id="20" data-pid="2" data-url="table.html" data-tabid="table" data-faicon="table">普通表格</li>
+                                    <li data-id="20" data-pid="2" data-url="/SysResource/Index" data-tabid="table" data-faicon="table">普通表格</li>
                                     <li data-id="21" data-pid="2" data-url="table-fixed.html" data-tabid="table-fixed" data-faicon="list-alt">固定表头表格</li>
                                     <li data-id="22" data-pid="2" data-url="table-edit.html" data-tabid="table-edit" data-faicon="indent">可编辑表格</li>
-                                    @foreach (var resource in Model)
+                                    @*@foreach (var resource in Model)
                                     {
                                         if (resource.ParentId == 0)
                                         {
@@ -140,7 +137,7 @@
                                         {
                                             <li data-id="@resource.Id" data-pid="@resource.ParentId" data-url="@resource.Url" data-tabid="table-fixed" data-faicon="@resource.Icon">@resource.Name</li>
                                         }
-                                    }
+                                    }*@
                                 </ul>
                             </div>
                         </li>

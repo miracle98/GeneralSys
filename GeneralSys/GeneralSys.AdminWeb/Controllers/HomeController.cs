@@ -9,18 +9,10 @@ namespace GeneralSys.AdminWeb.Controllers
 {
     public class HomeController : BaseController
     {
-        private readonly SysResourceManagerApp _app;
-
-        public HomeController()
-        {
-            _app = Ioc.GetFromFac<SysResourceManagerApp>();
-        }
-
         // GET: Home
         public ActionResult Index()
         {
-            var resource = _app.GetAllResource();
-            return View(resource);
+            return View();
         }
 
         public ActionResult Main()

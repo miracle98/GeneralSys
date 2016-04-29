@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using GeneralSys.App.ViewModel;
@@ -18,9 +19,9 @@ namespace GeneralSys.App
             _sysResourceRepository = sysResourceRepository;
         }
 
-        public IEnumerable<SysResourceVm> GetAllResource()
+        public dynamic GetAllResource(int pageCurrent = 1, int pageSize = 30)
         {
-            var resource = _sysResourceRepository.Find(t=>t.IsActive).AsEnumerable().Select(t=>new SysResourceVm
+            var resource = _sysResourceRepository.Find(pageCurrent, pageSize,"", t=>t.IsActive).AsEnumerable().Select(t=>new SysResourceVm
             {
                 Id = t.Id,
                 Name = t.Name,
@@ -29,7 +30,13 @@ namespace GeneralSys.App
                 ParentId = t.ParentId,
                 Description = t.Description
             });
-            return resource;
+            var count = _sysResourceRepository.GetCount(t => t.IsActive);
+            return new
+            {
+                list=resource,
+                total=count,
+                pageCurrent=pageCurrent
+            };
         }
     }
 }
