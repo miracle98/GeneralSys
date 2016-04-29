@@ -44,7 +44,7 @@ namespace GeneralSys.Repository
         /// <param name="pagesize">The pagesize.</param>
         /// <param name="orderby">排序，格式如："Id"/"Id descending"</param>
         /// <param name="exp"></param>
-        public IQueryable<T> Find(int pageindex, int pagesize, string orderby = "", Expression<Func<T, bool>> exp = null)
+        public IQueryable<T> Find(int pageindex=1, int pagesize=10, string orderby = "", Expression<Func<T, bool>> exp = null)
         {
             if (pageindex < 1) pageindex = 1;
             if (string.IsNullOrEmpty(orderby))

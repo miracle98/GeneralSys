@@ -1,8 +1,9 @@
 using System;
+using System.Collections.Generic;
 
-namespace GeneralSys.Domain
+namespace GeneralSys.Domain//GeneralSys.Repository.Models
 {
-    public class User
+    public partial class User
     {
         public int Id { get; set; }
         public string Account { get; set; }
@@ -12,7 +13,7 @@ namespace GeneralSys.Domain
         public int Status { get; set; }
         public int Type { get; set; }
         public string BizCode { get; set; }
-        public DateTime CreateTime { get; set; }
+        public System.DateTime CreateTime { get; set; }
         public int CreateId { get; set; }
     }
 }

@@ -8,6 +8,9 @@ namespace GeneralSys.AdminWeb
     {
         protected void Application_Start()
         {
+            //注册IOC
+            Ioc.InitIoc();
+
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }

@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SysResourceManagerApp.cs" />
     <Compile Include="UserManagerApp.cs" />
+    <Compile Include="ViewModel\SysResourceVm.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GeneralSys.Domain\GeneralSys.Domain.csproj">

@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 using GeneralSys.Domain;
 
@@ -8,37 +9,37 @@ namespace GeneralSys.Repository.Models.Mapping
         public UserMap()
         {
             // Primary Key
-            HasKey(t => t.Id);
+            this.HasKey(t => t.Id);
 
             // Properties
-            Property(t => t.Account)
+            this.Property(t => t.Account)
                 .IsRequired()
                 .HasMaxLength(255);
 
-            Property(t => t.Password)
+            this.Property(t => t.Password)
                 .IsRequired()
                 .HasMaxLength(255);
 
-            Property(t => t.Name)
+            this.Property(t => t.Name)
                 .IsRequired()
                 .HasMaxLength(255);
 
-            Property(t => t.BizCode)
+            this.Property(t => t.BizCode)
                 .IsRequired()
                 .HasMaxLength(255);
 
             // Table & Column Mappings
-            ToTable("User");
-            Property(t => t.Id).HasColumnName("Id");
-            Property(t => t.Account).HasColumnName("Account");
-            Property(t => t.Password).HasColumnName("Password");
-            Property(t => t.Name).HasColumnName("Name");
-            Property(t => t.Sex).HasColumnName("Sex");
-            Property(t => t.Status).HasColumnName("Status");
-            Property(t => t.Type).HasColumnName("Type");
-            Property(t => t.BizCode).HasColumnName("BizCode");
-            Property(t => t.CreateTime).HasColumnName("CreateTime");
-            Property(t => t.CreateId).HasColumnName("CreateId");
+            this.ToTable("User");
+            this.Property(t => t.Id).HasColumnName("Id");
+            this.Property(t => t.Account).HasColumnName("Account");
+            this.Property(t => t.Password).HasColumnName("Password");
+            this.Property(t => t.Name).HasColumnName("Name");
+            this.Property(t => t.Sex).HasColumnName("Sex");
+            this.Property(t => t.Status).HasColumnName("Status");
+            this.Property(t => t.Type).HasColumnName("Type");
+            this.Property(t => t.BizCode).HasColumnName("BizCode");
+            this.Property(t => t.CreateTime).HasColumnName("CreateTime");
+            this.Property(t => t.CreateId).HasColumnName("CreateId");
         }
     }
 }

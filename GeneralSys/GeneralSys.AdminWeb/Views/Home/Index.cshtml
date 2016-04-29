@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Index";
 }
+@model IEnumerable<GeneralSys.App.ViewModel.SysResourceVm>
     <!-- init -->
 <script type="text/javascript">
         $(function () {
@@ -129,6 +130,17 @@
                                     <li data-id="20" data-pid="2" data-url="table.html" data-tabid="table" data-faicon="table">普通表格</li>
                                     <li data-id="21" data-pid="2" data-url="table-fixed.html" data-tabid="table-fixed" data-faicon="list-alt">固定表头表格</li>
                                     <li data-id="22" data-pid="2" data-url="table-edit.html" data-tabid="table-edit" data-faicon="indent">可编辑表格</li>
+                                    @foreach (var resource in Model)
+                                    {
+                                        if (resource.ParentId == 0)
+                                        {
+                                            <li data-id="@resource.Id" data-pid="@resource.ParentId" data-faicon="folder-open-o" data-faicon-close="folder-o">@resource.Name</li>
+                                        }
+                                        else
+                                        {
+                                            <li data-id="@resource.Id" data-pid="@resource.ParentId" data-url="@resource.Url" data-tabid="table-fixed" data-faicon="@resource.Icon">@resource.Name</li>
+                                        }
+                                    }
                                 </ul>
                             </div>
                         </li>
@@ -236,9 +248,16 @@
             </div>
             <div id="bjui-navtab" class="tabsPage">
                 <div class="tabsPageHeader">
+                    <!--标签头-->
                     <div class="tabsPageHeaderContent">
                         <ul class="navtab-tab nav nav-tabs">
-                            <li data-url="index_layout.html"><a href="javascript:;"><span><i class="fa fa-home"></i> #maintab#</span></a></li>
+                            <li data-url="Main" @*class="external"  <!--该class标识在iframe中打开-->*@>
+                                <a href="javascript:;">
+                                    <span>
+                                        <i class="fa fa-home"></i> #maintab#
+                                    </span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div class="tabsLeft"><i class="fa fa-angle-double-left"></i></div>
@@ -249,6 +268,7 @@
                     <li><a href="javascript:;">#maintab#</a></li>
                 </ul>
                 <div class="navtab-panel tabsPageContent">
+                    <!--标签内容-->
                     <div class="navtabPage unitBox">
                         <div class="bjui-pageContent" style="background:#FFF;">
                             Loading...
