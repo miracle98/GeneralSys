@@ -6,14 +6,19 @@
 <SCRIPT LANGUAGE="JavaScript">
     var zTreeObj;
     // zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）
-    var setting = {};
+    var setting = {
+        check: {
+            chkStyle:"checkbox",
+            enable:true
+        }
+    };
     // zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解）
     var zNodes = [
         {
             name: "test1",
             open: true,
             children: [
-                { name: "test1_1" }, { name: "test1_2" }
+                { name: "test1_1" }, { name: "test1_2", checked :true }
             ]
         },
         {
@@ -26,9 +31,20 @@
     ];
     $(document).ready(function () {
         zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+
+        $.ajax({
+            type: "get",
+            url: "/SysResource/GetZtreeData",
+            dataType: "JSON",
+            success:function(data) {
+                $.fn.zTree.init($("#tree"), setting, data);
+            }
+        });
     });
 </SCRIPT>
 
 <div class="bjui-pageContent">
     <ul id="treeDemo" class="ztree"></ul>
+
+    <ul id="tree" class="ztree"></ul>
 </div>

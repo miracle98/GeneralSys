@@ -38,5 +38,23 @@ namespace GeneralSys.App
                 pageCurrent=pageCurrent
             };
         }
+
+        public IEnumerable<ZTreeModel> GetZTreeData(int? id)
+        {
+            var resource = _sysResourceRepository.Find(t => t.IsActive);
+            if (id!=0)
+            {
+                resource = resource.Where(t => t.Id == id);
+            }
+
+            return resource.Select(t=>new ZTreeModel
+            {
+                id = t.Id,
+                pId = t.ParentId,
+                url = t.Url,
+                icon = t.Icon,
+                name = t.Name
+            });
+        } 
     }
 }

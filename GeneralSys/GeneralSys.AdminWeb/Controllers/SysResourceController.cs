@@ -23,6 +23,12 @@ namespace GeneralSys.AdminWeb.Controllers
             return View();
         }
 
+        public ActionResult GetZtreeData()
+        {
+            var resource = _resourceManagerApp.GetZTreeData(0);
+            return Json(resource,JsonRequestBehavior.AllowGet);
+        }
+
         /// <summary>
         /// 获取资源列表
         /// </summary>
