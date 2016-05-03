@@ -33,6 +33,7 @@ namespace GeneralSys.Repository.Models.Mapping
             this.Property(t => t.Description).HasColumnName("Description");
             this.Property(t => t.Icon).HasColumnName("Icon");
             this.Property(t => t.ParentId).HasColumnName("ParentId");
+            this.Property(t => t.Type).HasColumnName("Type");
             this.Property(t => t.IsActive).HasColumnName("IsActive");
             this.Property(t => t.InsertTime).HasColumnName("InsertTime");
             this.Property(t => t.UpdateTime).HasColumnName("UpdateTime");

@@ -18,6 +18,11 @@ namespace GeneralSys.AdminWeb.Controllers
             return View();
         }
 
+        public ActionResult List()
+        {
+            return View();
+        }
+
         /// <summary>
         /// 获取资源列表
         /// </summary>

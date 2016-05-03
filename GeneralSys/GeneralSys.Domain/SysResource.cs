@@ -11,6 +11,7 @@ namespace GeneralSys.Domain//GeneralSys.Repository.Models
         public string Description { get; set; }
         public string Icon { get; set; }
         public int ParentId { get; set; }
+        public Nullable<int> Type { get; set; }
         public bool IsActive { get; set; }
         public System.DateTime InsertTime { get; set; }
         public System.DateTime UpdateTime { get; set; }

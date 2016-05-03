@@ -1,11 +1,10 @@
 ﻿
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_BjuiLayout.cshtml";
 }
 
 
 <div class="bjui-pageContent">
-
     <div style="margin: 15px;">
         <button type="button" class="btn-default" onclick="displayLinenumberCol(true);">显示行号列</button>
         <button type="button" class="btn-default" onclick="displayLinenumberCol(false);">隐藏行号列</button>
@@ -24,7 +23,7 @@
 
 <script src="~/Scripts/Common/grid.js"></script>
 <script src="~/Scripts/UIJs/SysResource.js"></script>
-@*<script type="text/javascript">
+<script type="text/javascript">
     var $datagrid = $('#maingrid')
 
         function displayLinenumberCol(flag) {
@@ -66,4 +65,4 @@
         function doDelTr(index) {
             $datagrid.datagrid('doDelRow', index)
         }
-</script>*@
+</script>

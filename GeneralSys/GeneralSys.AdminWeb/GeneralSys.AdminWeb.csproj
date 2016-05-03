@@ -109,9 +109,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\BJUI\js\bjui-ajax.js" />
+    <Content Include="Content\BJUI\js\bjui-ajaxtab.js" />
+    <Content Include="Content\BJUI\js\bjui-alertmsg.js" />
     <Content Include="Content\BJUI\js\bjui-all.js" />
     <Content Include="Content\BJUI\js\bjui-all.min.js" />
+    <Content Include="Content\BJUI\js\bjui-basedrag.js" />
+    <Content Include="Content\BJUI\js\bjui-contextmenu.js" />
+    <Content Include="Content\BJUI\js\bjui-core.js" />
+    <Content Include="Content\BJUI\js\bjui-datagrid.js" />
+    <Content Include="Content\BJUI\js\bjui-datepicker.js" />
+    <Content Include="Content\BJUI\js\bjui-dialog.js" />
+    <Content Include="Content\BJUI\js\bjui-extends.js" />
+    <Content Include="Content\BJUI\js\bjui-frag.js" />
+    <Content Include="Content\BJUI\js\bjui-initui.js" />
+    <Content Include="Content\BJUI\js\bjui-lookup.js" />
+    <Content Include="Content\BJUI\js\bjui-navtab.js" />
+    <Content Include="Content\BJUI\js\bjui-pagination.js" />
+    <Content Include="Content\BJUI\js\bjui-plugins.js" />
+    <Content Include="Content\BJUI\js\bjui-regional.zh-CN.js" />
+    <Content Include="Content\BJUI\js\bjui-slidebar.js" />
+    <Content Include="Content\BJUI\js\bjui-spinner.js" />
+    <Content Include="Content\BJUI\js\bjui-tabledit.js" />
+    <Content Include="Content\BJUI\js\bjui-tablefixed.js" />
+    <Content Include="Content\BJUI\js\bjui-tags.js" />
+    <Content Include="Content\BJUI\js\bjui-taskbar.js" />
+    <Content Include="Content\BJUI\js\bjui-theme.js" />
+    <Content Include="Content\BJUI\js\bjui-upload.js" />
+    <Content Include="Content\BJUI\js\bjui-util.date.js" />
     <Content Include="Content\BJUI\js\jquery-1.11.3.min.js" />
+    <Content Include="Content\BJUI\js\jquery-1.7.2.min.js" />
     <Content Include="Content\BJUI\js\jquery.cookie.js" />
     <Content Include="Content\BJUI\other\html5shiv.min.js" />
     <Content Include="Content\BJUI\other\jquery.iframe-transport.js" />
@@ -524,6 +551,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\SysResource\Index.cshtml" />
+    <Content Include="Views\Shared\_BjuiLayout.cshtml" />
+    <Content Include="Views\SysResource\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

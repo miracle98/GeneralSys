@@ -1,9 +1,11 @@
 ﻿//grid列表模块
 function MainGrid() {
     this.maingrid = $("#maingrid").datagrid({
-        showToolbar: false,
+        showToolbar: true,
         filterThead: false,
         target: $(this),
+        toolbarItem: "all",
+        height:"100%",
         columns: [
                 {
                     name: 'Id',
@@ -19,14 +21,12 @@ function MainGrid() {
                 {
                     name: 'Url',
                     label: '资源地址',
-                    align: 'center',
-                    type: 'date'
+                    align: 'center'
                 },
                 {
                     name: 'Icon',
                     label: '资源图标',
-                    align: 'center',
-                    type: 'date'
+                    align: 'center'
                 }
         ],
         dataUrl: '/SysResource/GetAllResource',
