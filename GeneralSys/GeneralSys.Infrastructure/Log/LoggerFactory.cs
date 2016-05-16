@@ -5,7 +5,7 @@ namespace GeneralSys.Infrastructure.Log
 {
     public static class LoggerFactory
     {
-        public static readonly Logger Log = LogManager.GetLogger("GenneralSys");
+        public static readonly Logger Log = LogManager.GetCurrentClassLogger();
         /// <summary>
 		/// IsDebugEnabled
 		/// </summary>
