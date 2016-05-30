@@ -143,6 +143,10 @@
     <Content Include="Content\BJUI\other\html5shiv.min.js" />
     <Content Include="Content\BJUI\other\jquery.iframe-transport.js" />
     <Content Include="Content\BJUI\other\respond.min.js" />
+    <Content Include="Content\EasyUI\easyloader.js" />
+    <Content Include="Content\EasyUI\jquery.easyui.min.js" />
+    <Content Include="Content\EasyUI\jquery.easyui.mobile.js" />
+    <Content Include="Content\EasyUI\jquery.min.js" />
     <Content Include="Content\plugins\bootstrap.js" />
     <Content Include="Content\plugins\bootstrap.min.js" />
     <Content Include="Content\plugins\bootstrapSelect\bootstrap-select.css" />
@@ -562,6 +566,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\EasyUI\locale\" />
+    <Folder Include="Content\EasyUI\plugins\" />
+    <Folder Include="Content\EasyUI\src\" />
+    <Folder Include="Content\EasyUI\themes\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
