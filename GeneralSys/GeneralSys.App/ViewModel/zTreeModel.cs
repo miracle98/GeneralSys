@@ -28,5 +28,10 @@ namespace GeneralSys.App.ViewModel
         /// URL地址
         /// </summary>
         public string url { get; set; }
+
+        /// <summary>
+        /// 图标样式
+        /// </summary>
+        public string iconSkin { get; set; }
     }
 }

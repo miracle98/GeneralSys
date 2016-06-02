@@ -1,1 +1,21 @@
-﻿@RenderBody()
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - OSharp管理系统</title>
+    <link href="~/Content/EasyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="~/Content/EasyUI/themes/icon.css" rel="stylesheet" />
+    @RenderSection("header", false)
+</head>
+<body>
+    @RenderBody()
+    <script src="~/Content/EasyUI/jquery.min.js"></script>
+    <script src="~/Content/EasyUI/locale/easyui-lang-zh_CN.js"></script>
+    <script src="~/Content/EasyUI/jquery.easyui.min.js"></script>
+    @RenderSection("footer", false)
+</body>
+</html>

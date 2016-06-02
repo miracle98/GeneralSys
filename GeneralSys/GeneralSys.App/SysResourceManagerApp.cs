@@ -52,7 +52,7 @@ namespace GeneralSys.App
                 id = t.Id,
                 pId = t.ParentId,
                 url = t.Url,
-                icon = t.Icon,
+                //icon = t.Icon,
                 name = t.Name
             });
         } 
