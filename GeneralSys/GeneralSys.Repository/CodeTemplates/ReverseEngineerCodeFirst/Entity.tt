@@ -8,7 +8,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace GeneralSys.Domain//<#= code.EscapeNamespace(efHost.Namespace) #>
+namespace <#= code.EscapeNamespace(efHost.Namespace) #>
 {
     public partial class <#= efHost.EntityType.Name #>
     {
