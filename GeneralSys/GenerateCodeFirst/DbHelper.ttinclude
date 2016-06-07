@@ -1,0 +1,104 @@
+﻿<#+
+	/// <summary>
+    /// 
+    /// </summary>
+    public static class DbHelper
+    {
+        public static string GetColumnDesc(string table, string columnName)
+        {
+            var sgsysTableSchema = TableColumns.FirstOrDefault(p => p.TableName == table && p.ColumnName == columnName);
+            if (sgsysTableSchema != null)
+                return sgsysTableSchema.ColumnDesc;
+            return "";
+        }
+
+        public static string GetTableDesc(string tableName)
+        {
+            var sgsysTableSchema = TableColumns.FirstOrDefault(p => p.TableName == tableName);
+            if (sgsysTableSchema != null)
+                return sgsysTableSchema.ColumnDesc;
+            return "";
+        }
+
+        private static readonly List<SgsysTableSchema> TableSchema = new List<SgsysTableSchema>();
+
+        public static List<SgsysTableSchema> TableColumns
+        {
+            get
+            {
+                if (TableSchema.Count <= 0)
+                {
+                    string connetStr = @"Data Source=.;Initial Catalog=GeneralSys;Persist Security Info=True;User ID=sa;Password=123456;MultipleActiveResultSets=True";
+                    SqlConnection conn = new SqlConnection(connetStr);
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(@"select * from (SELECT   TOP (100) PERCENT COALESCE (T.name, OBJECT_NAME(C.object_id)) AS TableName, TB.TableDESC,
+
+                        C.name AS ColumnName, TYPE_NAME(C.user_type_id) AS DataType, D.definition AS DefaultSetting,
+
+                        C.is_nullable AS IsNullable, C.max_length AS MaxLength, COLUMNPROPERTY(C.object_id, C.name, 'PRECISION')
+
+                        AS Precision, P.value AS ColumnDESC
+
+                        FROM      sys.columns AS C LEFT OUTER JOIN
+
+                        sys.table_types AS T ON T.type_table_object_id = C.object_id LEFT OUTER JOIN
+
+                        sys.default_constraints AS D ON C.object_id = D.parent_object_id AND
+
+                        D.parent_column_id = C.column_id LEFT OUTER JOIN
+
+                        sys.extended_properties AS P ON (P.major_id = C.object_id OR
+
+                        P.major_id = T.user_type_id) AND P.minor_id = C.column_id AND P.name = 'MS_Description' LEFT OUTER JOIN
+
+                        (SELECT   INFORMATION_SCHEMA.TABLES.TABLE_NAME AS TableName, P.value AS TableDESC
+
+                        FROM      INFORMATION_SCHEMA.TABLES LEFT OUTER JOIN
+
+                        sys.extended_properties AS P ON
+
+                        OBJECT_ID(INFORMATION_SCHEMA.TABLES.TABLE_SCHEMA + '.' + INFORMATION_SCHEMA.TABLES.TABLE_NAME)
+
+                        = P.major_id AND P.minor_id = 0
+
+                        WHERE   (INFORMATION_SCHEMA.TABLES.TABLE_TYPE = 'BASE TABLE')) AS TB ON COALESCE (T.name,
+
+                        OBJECT_NAME(C.object_id)) = TB.TableName
+
+                        WHERE   (COALESCE (SCHEMA_NAME(T.schema_id), OBJECT_SCHEMA_NAME(C.object_id)) = 'dbo')
+
+                        ORDER BY TableName) as A ", conn);
+                    var rs = cmd.ExecuteReader();
+                    while (rs.Read())
+                    {
+                        SgsysTableSchema schema = new SgsysTableSchema
+                        {
+                            ColumnName = rs["ColumnName"].ToString(),
+                            ColumnDesc = rs["ColumnDesc"].ToString(),
+                            TableDesc = rs["TableDesc"].ToString(),
+                            TableName = rs["TableName"].ToString()
+                        };
+                        TableSchema.Add(schema);
+                    }
+                    cmd.Dispose();
+                    conn.Close();
+                }
+                return TableSchema;
+            }
+        }
+
+    }
+
+    public class SgsysTableSchema
+    {
+        public string ColumnName { get; set; }
+
+        public string ColumnDesc { get; set; }
+
+        public string TableName { get; set; }
+
+        public string TableDesc { get; set; }
+    }
+	
+
+#>
