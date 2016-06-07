@@ -54,35 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
-    <Compile Include="Models\BaseLoginLog.cs" />
-    <Compile Include="Models\BaseOrganization.cs" />
-    <Compile Include="Models\BaseResource.cs" />
-    <Compile Include="Models\BaseRole.cs" />
-    <Compile Include="Models\BaseRolesRsResource.cs" />
-    <Compile Include="Models\BaseStaffOrganize.cs" />
-    <Compile Include="Models\BaseUser.cs" />
-    <Compile Include="Models\BaseUserGroup.cs" />
-    <Compile Include="Models\BaseUserGroupRsResource.cs" />
-    <Compile Include="Models\BaseUserRole.cs" />
-    <Compile Include="Models\BaseUserRsResource.cs" />
-    <Compile Include="Models\BaseUserRsUserGroup.cs" />
-    <Compile Include="Models\GeneralSysContext.cs" />
-    <Compile Include="Models\Mapping\BaseLoginLogMap.cs" />
-    <Compile Include="Models\Mapping\BaseOrganizationMap.cs" />
-    <Compile Include="Models\Mapping\BaseResourceMap.cs" />
-    <Compile Include="Models\Mapping\BaseRoleMap.cs" />
-    <Compile Include="Models\Mapping\BaseRolesRsResourceMap.cs" />
-    <Compile Include="Models\Mapping\BaseStaffOrganizeMap.cs" />
-    <Compile Include="Models\Mapping\BaseUserGroupMap.cs" />
-    <Compile Include="Models\Mapping\BaseUserGroupRsResourceMap.cs" />
-    <Compile Include="Models\Mapping\BaseUserMap.cs" />
-    <Compile Include="Models\Mapping\BaseUserRoleMap.cs" />
-    <Compile Include="Models\Mapping\BaseUserRsResourceMap.cs" />
-    <Compile Include="Models\Mapping\BaseUserRsUserGroupMap.cs" />
-    <Compile Include="Models\Mapping\SysResourceMap.cs" />
-    <Compile Include="Models\Mapping\UserMap.cs" />
-    <Compile Include="Models\SysResource.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="GeneralSysContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SysResourceRepository.cs" />
     <Compile Include="UserRepository.cs" />
@@ -98,12 +70,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Context.tt" />
-    <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Entity.tt" />
-    <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Mapping.tt" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Folder Include="Models\Mapping\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

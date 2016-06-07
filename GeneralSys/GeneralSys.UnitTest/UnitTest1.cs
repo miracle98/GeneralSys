@@ -1,5 +1,5 @@
 ﻿using System;
-using GeneralSys.Infrastructure.Log;
+using DbTools;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GeneralSys.UnitTest
@@ -10,7 +10,7 @@ namespace GeneralSys.UnitTest
         [TestMethod]
         public void TestMethod1()
         {
-            LoggerFactory.Debug("as");
+            DbModelTools.GetTableDesc("BaseRolesRsResource");
         }
     }
 }

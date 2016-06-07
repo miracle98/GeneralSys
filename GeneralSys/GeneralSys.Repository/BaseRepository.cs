@@ -6,7 +6,7 @@ using System.Linq.Dynamic;
 using System.Linq.Expressions;
 using EntityFramework.Extensions;
 using GeneralSys.Domain.Interface;
-using GeneralSys.Repository.Models;
+//using GeneralSys.Repository.Models;
 
 namespace GeneralSys.Repository
 {

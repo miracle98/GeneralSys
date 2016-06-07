@@ -54,9 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GeneralSys.Infrastructure\GeneralSys.Infrastructure.csproj">
-      <Project>{0896eccc-8d3a-4aed-9e0d-a8b9ed4514de}</Project>
-      <Name>GeneralSys.Infrastructure</Name>
+    <ProjectReference Include="..\DbTools\DbTools.csproj">
+      <Project>{58fd8d5b-73cd-4b8a-9ecc-33c22629ef10}</Project>
+      <Name>DbTools</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
